@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>YA Music Downloader</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../vendor/bootstrap-3.3.6-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="btn-toolbar">
+        <div class="pull-left">
+            <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-primary active" id="addBtn" disabled>
+                    <i class="glyphicon glyphicon-save"></i> Загрузка
+                </button>
+                <button type="button" class="btn btn-sm btn-primary" id="downloadBtn" disabled>
+                    <i class="glyphicon glyphicon-saved"></i> Скачанные
+                </button>
+            </div>
+        </div>
+        <div class="pull-right">
+            <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-primary" id="downloadFolderBtn"
+                        title="Открыть папку загрузок">
+                    <i class="glyphicon glyphicon-folder-open"></i> &nbsp;Загрузки
+                </button>
+                <button type="button" class="btn btn-sm btn-primary" id="settingsBtn" title="Открыть настройки">
+                    <i class="glyphicon glyphicon-cog"></i> Настройки
+                </button>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+
+    <div id="preloader">
+        <img src="img/preloader.gif" alt="loading...">
+    </div>
+
+    <div id="addContainer" class="hidden">
+        <div class="text-container">
+            <div class="artist-container">
+                <h3 id="name"></h3>
+                <p id="info"></p>
+            </div>
+
+            <ul class="list-inline hidden">
+                <li>
+                    <button id="downloadTopTracks" type="button" class="btn btn-sm btn-success btn-sm">
+                        <i class="glyphicon glyphicon-star"></i> Скачать
+                    </button>
+                </li>
+                <li><input type="number" id="numOfTopTracks" min="1" value="10" max="99"></li>
+                <li>лучших треков</li>
+            </ul>
+
+            <div id="albums"></div>
+            <div id="compilations"></div>
+        </div>
+        <div class="download-container">
+            <button id="startDownloadBtn" type="button" class="btn btn-sm btn-success" title="Скачать">
+                <i class="glyphicon glyphicon-save"></i> Скачать
+            </button>
+        </div>
+    </div>
+
+    <div id="downloadContainer" class="hidden"></div>
+
+    <div id="errorContainer" class="alert alert-warning hidden">
+        Ошибка! Не удаётся подключится к Яндекс.
+		Попробуйте включить VPN или ввести капчу.
+    </div>
+</div>
+
+<script src="../js/popup.js"></script>
+</body>
+</html>
